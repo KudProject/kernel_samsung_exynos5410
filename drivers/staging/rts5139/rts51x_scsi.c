@@ -2067,7 +2067,6 @@ int proc_info(struct Scsi_Host *host, char *buffer,
 	SPRINTF("       Vendor: Realtek Corp.\n");
 	SPRINTF("      Product: RTS51xx USB Card Reader\n");
 	SPRINTF("      Version: %s\n", DRIVER_VERSION);
-	SPRINTF("        Build: %s\n", __TIME__);
 
 	/*
 	 * Calculate start of next buffer, and return value.
