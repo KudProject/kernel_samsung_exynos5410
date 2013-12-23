@@ -41,14 +41,8 @@
 #define BRCMF_PKT_FILTER_PATTERN_FIXED_LEN	\
 	offsetof(struct brcmf_pkt_filter_pattern_le, mask_and_pattern)
 
-#ifdef DEBUG
-static const char brcmf_version[] =
-	"Dongle Host Driver, version " BRCMF_VERSION_STR "\nCompiled on "
-	__DATE__ " at " __TIME__;
-#else
 static const char brcmf_version[] =
 	"Dongle Host Driver, version " BRCMF_VERSION_STR;
-#endif
 
 /* Message trace header */
 struct msgtrace_hdr {
