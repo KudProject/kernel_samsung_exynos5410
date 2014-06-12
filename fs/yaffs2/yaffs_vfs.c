@@ -2515,7 +2515,7 @@ static int yaffs_proc_read(char *page,
 
 	/* Print header first */
 	if (step == 0)
-		buf += sprintf(buf, "YAFFS built:" __DATE__ " " __TIME__ "\n");
+		buf += sprintf(buf, "YAFFS\n");
 	else if (step == 1)
 		buf += sprintf(buf, "\n");
 	else {
@@ -2713,8 +2713,7 @@ static int __init init_yaffs_fs(void)
 	int error = 0;
 	struct file_system_to_install *fsinst;
 
-	yaffs_trace(YAFFS_TRACE_ALWAYS,
-		"yaffs built " __DATE__ " " __TIME__ " Installing.");
+	yaffs_trace(YAFFS_TRACE_ALWAYS, "yaffs Installing.");
 
 #ifdef CONFIG_YAFFS_ALWAYS_CHECK_CHUNK_ERASED
 	yaffs_trace(YAFFS_TRACE_ALWAYS,
@@ -2768,8 +2767,7 @@ static void __exit exit_yaffs_fs(void)
 
 	struct file_system_to_install *fsinst;
 
-	yaffs_trace(YAFFS_TRACE_ALWAYS,
-		"yaffs built " __DATE__ " " __TIME__ " removing.");
+	yaffs_trace(YAFFS_TRACE_ALWAYS, "yaffs removing.");
 
 	remove_proc_entry("yaffs", YPROC_ROOT);
 
