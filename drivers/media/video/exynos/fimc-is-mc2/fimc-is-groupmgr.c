@@ -1205,11 +1205,12 @@ int fimc_is_group_buffer_queue(struct fimc_is_groupmgr *groupmgr,
 #endif
 
 #ifdef ENABLE_FAST_SHOT
-		if (test_bit(FIMC_IS_GROUP_OTF_INPUT, &group->state))
+		if (test_bit(FIMC_IS_GROUP_OTF_INPUT, &group->state)) {
 			memcpy(&group->fast_ctl.aa, &frame->shot->ctl.aa,
 				sizeof(struct camera2_aa_ctl));
 			memcpy(&group->fast_ctl.scaler, &frame->shot->ctl.scaler,
 				sizeof(struct camera2_scaler_ctl));
+		}
 #endif
 
 		fimc_is_frame_trans_fre_to_req(framemgr, frame);
