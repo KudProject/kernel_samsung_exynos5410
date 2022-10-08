@@ -2143,10 +2143,10 @@ int fimc_is_ischain_power(struct fimc_is_device_ischain *this, int on)
 				goto err_spi_rst;
 			}
 
-		    pr_info("read cal data from FROM\n");
-		    if((fimc_is_ischain_readcaldata(this, &sensor->enum_sensor[SENSOR_NAME_IMX135].ext)!= -EIO) &&
+			pr_info("read cal data from FROM\n");
+			if ((fimc_is_ischain_readcaldata(this, &sensor->enum_sensor[SENSOR_NAME_IMX135].ext) != -EIO) &&
 					CRC32_HEADER_CHECK)
-		        is_caldata_read = true;
+				is_caldata_read = true;
 
 			if(!CRC32_HEADER_CHECK){
 				pr_info("Camera : CRC32 error for all section.\n");
@@ -7546,11 +7546,12 @@ int fimc_is_ischain_3a1_callback(struct fimc_is_device_ischain *device,
 #endif
 
 #ifdef ENABLE_FAST_SHOT
-		if (test_bit(FIMC_IS_GROUP_OTF_INPUT, &group->state))
-			memcpy(&frame->shot->ctl.aa, &group->fast_ctl.aa,
-				sizeof(struct camera2_aa_ctl));
-			memcpy(&frame->shot->ctl.scaler, &group->fast_ctl.scaler,
-				sizeof(struct camera2_scaler_ctl));
+	if (test_bit(FIMC_IS_GROUP_OTF_INPUT, &group->state)) {
+		memcpy(&frame->shot->ctl.aa, &group->fast_ctl.aa,
+			sizeof(struct camera2_aa_ctl));
+		memcpy(&frame->shot->ctl.scaler, &group->fast_ctl.scaler,
+			sizeof(struct camera2_scaler_ctl));
+	}
 #endif
 
 #ifdef BAYER_CROP_DZOOM
