@@ -3534,7 +3534,7 @@ static int fimc_is_itf_grp_shot(struct fimc_is_device_ischain *device,
 						DVFS_L1, I2C_L1);
 #endif
 			} else if (device->module == SENSOR_NAME_S5K6B2) {
-				if (((device->setfile && 0xffff) \
+				if (((device->setfile & 0xffff) \
 					== ISS_SUB_SCENARIO_FRONT_VT1) \
 					|| ((device->setfile & 0xffff) == \
 					ISS_SUB_SCENARIO_FRONT_VT2))
