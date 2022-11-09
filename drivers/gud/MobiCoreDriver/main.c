@@ -1296,7 +1296,6 @@ static int __init mobicore_init(void)
 	int ret = 0;
 	dev_set_name(mcd, "mcd");
 
-	dev_info(mcd, "MobiCore Driver, Build: " __TIMESTAMP__ "\n");
 	dev_info(mcd, "MobiCore mcDrvModuleApi version is %i.%i\n",
 		 MCDRVMODULEAPI_VERSION_MAJOR,
 		 MCDRVMODULEAPI_VERSION_MINOR);
