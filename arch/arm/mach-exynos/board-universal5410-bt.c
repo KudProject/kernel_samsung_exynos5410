@@ -183,10 +183,10 @@ static int bcm_bt_rfkill_set_power(void *data, bool blocked)
 		if (bcm_bt_lock(lock_cookie_bt) != 0)
 			printk("** BT rfkill: timeout in acquiring bt lock**\n");
 
-		pr_info("[BT] Bluetooth Power On. built at %s\n", __TIME__);
+		pr_info("[BT] Bluetooth Power On\n");
 		gpio_set_value(GPIO_BTREG_ON, 1);
 	} else {
-		pr_info("[BT] Bluetooth Power Off. built at %s\n", __TIME__);
+		pr_info("[BT] Bluetooth Power Off\n");
 		gpio_set_value(GPIO_BTREG_ON, 0);
 	}
 
