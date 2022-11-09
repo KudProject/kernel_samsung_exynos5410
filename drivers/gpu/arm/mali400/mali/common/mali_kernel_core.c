@@ -163,7 +163,6 @@ _mali_osk_errcode_t mali_kernel_constructor( void )
 
 	MALI_DEBUG_PRINT(2, ("\n"));
 	MALI_DEBUG_PRINT(2, ("Inserting Mali v%d device driver. \n",_MALI_API_VERSION));
-	MALI_DEBUG_PRINT(2, ("Compiled: %s, time: %s.\n", __DATE__, __TIME__));
 	MALI_DEBUG_PRINT(2, ("Svn revision: %s\n", SVN_REV_STRING));
 
     err  = initialize_subsystems();
